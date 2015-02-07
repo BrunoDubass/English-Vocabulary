@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "BDBWordsModel.h"
+#import "BDBWordsTableViewController.h"
+#import "BDBDefinitionViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +20,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    if ([[UIDevice currentDevice]userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        [self configureForPad];
+    }else{
+        [self configureForPhone];
+    }
+    
+    
+    
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
@@ -43,6 +55,64 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark - CONFIGURATION
+
+-(void)configureForPad{
+    
+    //MODELO
+    
+    BDBWordsModel* model = [[BDBWordsModel alloc]init];
+
+    //CONTROLADOR
+    
+    BDBWordsTableViewController* tableVC = [[BDBWordsTableViewController alloc]initWithModel:model];
+    
+    BDBDefinitionViewController* def = [[BDBDefinitionViewController alloc]initWithModel:[tableVC lastSelectedWord]];
+    
+    //NAVIGATOR
+    
+    UINavigationController* navTableVC = [[UINavigationController alloc]initWithRootViewController:tableVC];
+    UINavigationController* navDefVC = [[UINavigationController alloc]initWithRootViewController:def];
+    
+    
+    //SPLIT VIEW CONTROLLER
+    
+    UISplitViewController* splitVC = [[UISplitViewController alloc]initWithNibName:nil bundle:nil];
+    splitVC.viewControllers = @[navTableVC, navDefVC];
+    def.navigationItem.rightBarButtonItem = splitVC.displayModeButtonItem;
+    //DELEGATES
+    
+    tableVC.delegate = def;
+    splitVC.delegate = def;
+    
+    //ROOT
+    
+    self.window.rootViewController = splitVC;
+}
+
+-(void)configureForPhone{
+    
+    //MODELO
+    
+    BDBWordsModel* model = [[BDBWordsModel alloc]init];
+    //NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    //CONTROLADOR
+    
+    BDBWordsTableViewController* tableVC = [[BDBWordsTableViewController alloc]initWithModel:model];
+    
+    //NAVIGATOR
+    
+    UINavigationController* navTableVC = [[UINavigationController alloc]initWithRootViewController:tableVC];
+    
+    //DELEGATES
+    
+    tableVC.delegate = tableVC;
+    
+    //ROOT
+    
+    self.window.rootViewController = navTableVC;
 }
 
 @end

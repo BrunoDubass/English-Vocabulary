@@ -12,6 +12,12 @@
 		140FB5641A691053008C03E1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 140FB5631A691053008C03E1 /* Images.xcassets */; };
 		140FB5671A691053008C03E1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 140FB5651A691053008C03E1 /* LaunchScreen.xib */; };
 		140FB5731A691053008C03E1 /* English_VocabularyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 140FB5721A691053008C03E1 /* English_VocabularyTests.m */; };
+		140FB57E1A691091008C03E1 /* BDBWordsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 140FB57D1A691091008C03E1 /* BDBWordsModel.m */; };
+		140FB5821A6910BE008C03E1 /* BDBWordsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 140FB5811A6910BE008C03E1 /* BDBWordsTableViewController.m */; };
+		140FB5861A691108008C03E1 /* Vocabwords.txt in Resources */ = {isa = PBXBuildFile; fileRef = 140FB5851A691108008C03E1 /* Vocabwords.txt */; };
+		140FB5881A691D48008C03E1 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 140FB5871A691D48008C03E1 /* Entitlements.plist */; };
+		140FB58C1A6921AE008C03E1 /* BDBDefinitionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 140FB58A1A6921AE008C03E1 /* BDBDefinitionViewController.m */; };
+		140FB58D1A6921AE008C03E1 /* BDBDefinitionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 140FB58B1A6921AE008C03E1 /* BDBDefinitionViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +41,15 @@
 		140FB56C1A691053008C03E1 /* English VocabularyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "English VocabularyTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		140FB5711A691053008C03E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		140FB5721A691053008C03E1 /* English_VocabularyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = English_VocabularyTests.m; sourceTree = "<group>"; };
+		140FB57C1A691091008C03E1 /* BDBWordsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDBWordsModel.h; sourceTree = "<group>"; };
+		140FB57D1A691091008C03E1 /* BDBWordsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDBWordsModel.m; sourceTree = "<group>"; };
+		140FB5801A6910BE008C03E1 /* BDBWordsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDBWordsTableViewController.h; sourceTree = "<group>"; };
+		140FB5811A6910BE008C03E1 /* BDBWordsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDBWordsTableViewController.m; sourceTree = "<group>"; };
+		140FB5851A691108008C03E1 /* Vocabwords.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Vocabwords.txt; sourceTree = "<group>"; };
+		140FB5871A691D48008C03E1 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
+		140FB5891A6921AE008C03E1 /* BDBDefinitionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDBDefinitionViewController.h; sourceTree = "<group>"; };
+		140FB58A1A6921AE008C03E1 /* BDBDefinitionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDBDefinitionViewController.m; sourceTree = "<group>"; };
+		140FB58B1A6921AE008C03E1 /* BDBDefinitionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BDBDefinitionViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +73,7 @@
 		140FB5501A691052008C03E1 = {
 			isa = PBXGroup;
 			children = (
+				140FB5871A691D48008C03E1 /* Entitlements.plist */,
 				140FB55B1A691053008C03E1 /* English Vocabulary */,
 				140FB56F1A691053008C03E1 /* English VocabularyTests */,
 				140FB55A1A691053008C03E1 /* Products */,
@@ -76,11 +92,13 @@
 		140FB55B1A691053008C03E1 /* English Vocabulary */ = {
 			isa = PBXGroup;
 			children = (
+				140FB5841A6910EB008C03E1 /* Resources */,
 				140FB5601A691053008C03E1 /* AppDelegate.h */,
 				140FB5611A691053008C03E1 /* AppDelegate.m */,
 				140FB5631A691053008C03E1 /* Images.xcassets */,
 				140FB5651A691053008C03E1 /* LaunchScreen.xib */,
 				140FB55C1A691053008C03E1 /* Supporting Files */,
+				140FB57F1A691096008C03E1 /* Models */,
 			);
 			path = "English Vocabulary";
 			sourceTree = "<group>";
@@ -109,6 +127,36 @@
 				140FB5711A691053008C03E1 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		140FB57F1A691096008C03E1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				140FB57C1A691091008C03E1 /* BDBWordsModel.h */,
+				140FB57D1A691091008C03E1 /* BDBWordsModel.m */,
+				140FB5831A6910C6008C03E1 /* Controllers */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		140FB5831A6910C6008C03E1 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				140FB5891A6921AE008C03E1 /* BDBDefinitionViewController.h */,
+				140FB58A1A6921AE008C03E1 /* BDBDefinitionViewController.m */,
+				140FB58B1A6921AE008C03E1 /* BDBDefinitionViewController.xib */,
+				140FB5801A6910BE008C03E1 /* BDBWordsTableViewController.h */,
+				140FB5811A6910BE008C03E1 /* BDBWordsTableViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		140FB5841A6910EB008C03E1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				140FB5851A691108008C03E1 /* Vocabwords.txt */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,6 +239,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				140FB5881A691D48008C03E1 /* Entitlements.plist in Resources */,
+				140FB5861A691108008C03E1 /* Vocabwords.txt in Resources */,
+				140FB58D1A6921AE008C03E1 /* BDBDefinitionViewController.xib in Resources */,
 				140FB5671A691053008C03E1 /* LaunchScreen.xib in Resources */,
 				140FB5641A691053008C03E1 /* Images.xcassets in Resources */,
 			);
@@ -212,6 +263,9 @@
 			files = (
 				140FB5621A691053008C03E1 /* AppDelegate.m in Sources */,
 				140FB55F1A691053008C03E1 /* main.m in Sources */,
+				140FB5821A6910BE008C03E1 /* BDBWordsTableViewController.m in Sources */,
+				140FB57E1A691091008C03E1 /* BDBWordsModel.m in Sources */,
+				140FB58C1A6921AE008C03E1 /* BDBDefinitionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,7 +316,10 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
+				"CODE_SIGN_ENTITLEMENTS[sdk=*]" = Entitlements.plist;
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "-";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -304,7 +361,9 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "-";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -328,8 +387,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "English Vocabulary/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -338,8 +399,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "English Vocabulary/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -396,6 +459,7 @@
 				140FB5781A691053008C03E1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		140FB5791A691053008C03E1 /* Build configuration list for PBXNativeTarget "English VocabularyTests" */ = {
 			isa = XCConfigurationList;
@@ -404,6 +468,7 @@
 				140FB57B1A691053008C03E1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
